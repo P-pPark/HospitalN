@@ -11,7 +11,9 @@ public class Menu {
         System.out.println("|        1. add Person      |");
         System.out.println("|        2. remove Person   |");
         System.out.println("|        3. show Person     |");
-        System.out.println("|        4. Exit            |");
+        System.out.println("|        4. correct Person  |");
+        System.out.println("|        5. save changes    |");
+        System.out.println("|        6. Exit            |");
         System.out.println("=============================");
         System.out.println(" Select option: ");
     }
@@ -55,7 +57,19 @@ public class Menu {
         System.out.println("===============================");
         System.out.println(" Select option: ");
     }
+    public void display5(){
+        System.out.println("==============================|");
+        System.out.println("|       MENU SELECTION 5      |");
+        System.out.println("==============================|");
+        System.out.println("| Options:                    |");
+        System.out.println("|     1. correct Doctor        |");
+        System.out.println("|     2. correct Patien        |");
+        System.out.println("|     3. correct Medicalstaff  |");
+        System.out.println("|     4. Exit                 |");
+        System.out.println("===============================");
+        System.out.println(" Select option: ");
 
+    }
     Container <Doctor> Doctors = new ArrayContainer <>();
     Container <Patient> Patients = new ArrayContainer<>();
     Container <Medicalstaff>  Medicalstaffs = new ArrayContainer<>();
@@ -86,6 +100,13 @@ public class Menu {
                     showPerson();;
                     break;
                 case 4:
+                    display5();
+                    correctPerson();;
+                    break;
+                case 5:
+                    saveChanges();;
+                    break;
+                case 6:
                     notExit = false;
                     System.out.println("Exit menu sellection 1");
                     break;
@@ -161,4 +182,26 @@ public class Menu {
         }
     }
 
+    public void correctPerson() {
+        boolean not1Exit = true;
+        while(not1Exit) {
+            switch(enterNumber()) {
+                case 1: System.out.println ("You correct a doctor ");
+                    break;
+                case 2: System.out.println ("You correct a patient ");break;
+                case 3: System.out.println ("You correct a medicalstaff ");break;
+                case 4: not1Exit = false;
+                    display1();
+                    option(); break;
+                default:
+                    System.out.println("Invalid selection. Try once more"); break;
+            }
+        }
+    }
+
+    public void saveChanges() {
+
+            }
+        }
+    }
 }
